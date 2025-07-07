@@ -1,0 +1,73 @@
+body {
+  display: grid;
+  grid-template-areas: 
+    "header header"
+    "nav nav"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 1fr 3fr;
+  gap: 1rem;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+/* Zonas del layout */
+header { grid-area: header; background: black; color: white; padding: 1rem; text-align: center; }
+nav { grid-area: nav; background: gray; padding: 1rem; }
+aside { grid-area: sidebar; background: #eee; padding: 1rem; }
+main { grid-area: main; padding: 1rem; }
+footer { grid-area: footer; background: black; color: white; text-align: center; padding: 1rem; }
+
+/* Navbar */
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Estilos de testimonios */
+.testimonios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: white;
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+
+/* Compra: botón WhatsApp */
+a[href*="wa.me"] {
+  display: inline-block;
+  margin-top: 1rem;
+  background: green;
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "sidebar"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+}
